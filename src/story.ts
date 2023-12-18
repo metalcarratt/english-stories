@@ -1,14 +1,14 @@
-const SEA = '/stormy-sea.jpg';
-const CITY = '/seaside-city.jpg';
-const DOWNTOWN = '/downtown.jpg';
-const CLOUDS = '/clouds.jpg';
+const SEA = './stormy-sea.jpg';
+const CITY = './seaside-city.jpg';
+const DOWNTOWN = './downtown.jpg';
+const CLOUDS = './clouds.jpg';
 
-const MONSTER = '/sea-monster.png';
-const MONSTER_CLOSEUP = '/sea-monster-closeup.png';
-const MAN = '/surprised-man.png';
-const WOMAN = '/surprised-woman.png';
-const BOLT = '/bolt.png';
-const SWORD = '/sword.png';
+const MONSTER = './sea-monster.png';
+const MONSTER_CLOSEUP = './sea-monster-closeup.png';
+const MAN = './surprised-man.png';
+const WOMAN = './surprised-woman.png';
+const BOLT = './bolt.png';
+const SWORD = './sword.png';
 
 export type StoryFrame = {
     bg?: string,
