@@ -3,8 +3,8 @@
         <img class="background" :src="background()" />
         <img class="character" :src="character()" />
         <div class="dialog">
-            <span class="en">{{ dialogEn() }}</span>
-            <span class="kr">{{ dialogKr() }}</span>
+            <span class="en"  @click="playEn">{{ dialogEn() }}</span>
+            <span class="kr" @click="playKr">{{ dialogKr() }}</span>
             <span class="arrows">
                 <span @click="prev">
                     {{ hasPrev() ? '🡄' : '' }}
@@ -47,7 +47,17 @@ const update = () => {
     frame.value.bg = story[index].bg ?? frame.value.bg;
     frame.value.ch = story[index].ch ?? frame.value.ch;
     frame.value.d = story[index].d;
+    playEn();
 }
+
+const playEn = () => {
+    frame.value.d.enAudio?.play();
+}
+
+const playKr = () => {
+    frame.value.d.krAudio?.play();
+}
+
 </script>
 
 <style scoped>
@@ -56,7 +66,7 @@ const update = () => {
     width: 384px;
     margin: 0 auto;
     justify-content: center;
-    cursor: pointer;
+    /* cursor: pointer; */
     position: relative;
 }
 
@@ -102,10 +112,12 @@ img.character {
   text-shadow: #C900FF 0 0 5px, #FEF8FF 0 0 15px;
   font-style: italic;
   text-align: center;
+  /* pointer-events: auto; */
 }
 
 .en:hover {
     text-shadow:  #EA9DFF 0 0 5px, #EA9DFF 0 0 15px, #EA9DFF 0 0 25px;
+    cursor: pointer;
 }
 
 .kr {
@@ -117,6 +129,7 @@ img.character {
 
 .kr:hover {
     text-shadow:  #EA9DFF 0 0 5px, #EA9DFF 0 0 15px, #EA9DFF 0 0 25px;
+    cursor: pointer;
 }
 
 .arrows {
@@ -133,5 +146,9 @@ img.character {
 .arrows span {
     padding: 0;
     text-shadow:  black 0 0 1px
+}
+
+.arrows span:hover {
+    cursor: pointer;
 }
 </style>

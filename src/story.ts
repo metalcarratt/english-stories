@@ -25,31 +25,41 @@ export const story = [
         ch: MONSTER,
         d: {
             en: 'Roar!',
-            kr: '노호!'
+            kr: '노호!',
+            enAudio: new Audio( require('@/assets/001.mp3') ),
+            krAudio: new Audio( require('@/assets/001k.mp3') )
         }
     },
     {
         d: {
             en: 'I am Kraken!',
-            kr: '나는 크라켄이다!'
+            kr: '나는 크라켄이다!',
+            enAudio: new Audio( require('@/assets/002.mp3') ),
+            krAudio: new Audio( require('@/assets/002k.mp3') )
         }
     },
     {
         d: {
             en: 'I am from the sea!',
-            kr: '나는 바다에서 왔습니다!'
+            kr: '나는 바다에서 왔습니다!',
+            enAudio: new Audio( require('@/assets/003.mp3') ),
+            krAudio: new Audio( require('@/assets/003k.mp3') )
         }
     },
     {
         d: {
             en: 'I am big and scary!',
-            kr: '나는 크고 무섭다!'
+            kr: '나는 크고 무섭다!',
+            enAudio: new Audio( require('@/assets/004.mp3') ),
+            krAudio: new Audio( require('@/assets/004k.mp3') )
         }
     },
     {
         d: {
             en: 'And very hungry!',
-            kr: '그리고 매우 배고프다!'
+            kr: '그리고 매우 배고프다!',
+            enAudio: new Audio( require('@/assets/005.mp3') ),
+            krAudio: new Audio( require('@/assets/005k.mp3') )
         }
     },
     {
