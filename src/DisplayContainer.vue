@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div :class="['container', props.mode]">
         <img class="background" :src="background()" />
         <img class="character" :src="character()" />
         <div class="dialog">
@@ -18,8 +18,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, defineProps } from 'vue';
 import { story } from './story';
+
+const props = defineProps(['mode']);
 
 let index = 0;
 
@@ -58,16 +60,28 @@ const playKr = () => {
     frame.value.d.krAudio?.play();
 }
 
+update();
 </script>
 
 <style scoped>
 .container {
     display: flex;
-    width: 384px;
+    /* width: 384px; */
     margin: 0 auto;
     justify-content: center;
     /* cursor: pointer; */
     position: relative;
+    box-sizing: border-box;
+}
+
+.container.max-height {
+    height: 100%;
+    aspect-ratio: 0.75;
+}
+
+.container.max-width {
+    width: 100%;
+    aspect-ratio: 0.75;
 }
 
 @media only screen and (max-width: 384px) {
