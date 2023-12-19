@@ -7,10 +7,10 @@
             <span class="kr" @click="playKr">{{ dialogKr() }}</span>
             <span class="arrows">
                 <span @click="prev">
-                    {{ hasPrev() ? '🡄' : '' }}
+                    <img src="left.png" v-if="hasPrev()"/>
                 </span>
                 <span @click="next">
-                    {{ hasNext() ? '🡆' : '' }}
+                    <img src="right.png" v-if="hasNext()" />
                 </span>
             </span>
         </div>
@@ -143,12 +143,13 @@ img.character {
   padding: 5px;
 }
 
-.arrows span {
+.arrows span img {
     padding: 0;
     text-shadow:  black 0 0 1px
 }
 
-.arrows span:hover {
+.arrows span img:hover {
     cursor: pointer;
+    filter: drop-shadow(0 0 5px #1e2129);
 }
 </style>
