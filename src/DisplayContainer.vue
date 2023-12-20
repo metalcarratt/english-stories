@@ -25,7 +25,7 @@ const props = defineProps(['mode']);
 
 let index = 0;
 
-const frame = ref(story[0]);
+const frame = ref({bg: '', ch: '', d: { en: '', kr: '', enAudio: new Audio(), krAudio: new Audio()}});
 
 const background = () => frame.value.bg;
 const character = () => frame.value.ch;
@@ -45,10 +45,20 @@ const prev = () => {
     update();
 }
 
+const lastFrame = (prop: string) => {
+    for (let i = index; i >= 0; i--) {
+        const prevFrame = story[i] as Record<string, unknown>;
+        if (prevFrame[prop]) {
+            return prevFrame[prop];
+        }
+    }
+}
+
 const update = () => {
-    frame.value.bg = story[index].bg ?? frame.value.bg;
-    frame.value.ch = story[index].ch ?? frame.value.ch;
-    frame.value.d = story[index].d;
+    frame.value.bg = (story[index].bg ?? lastFrame('bg') ?? frame.value.bg) as string;
+    frame.value.ch = (story[index].ch ?? lastFrame('ch') ?? frame.value.ch) as string;
+    frame.value.d = (story[index].d ?? lastFrame('d') ?? frame.value.d);
+    console.log(`d: ${JSON.stringify(story)}`);
     playEn();
 }
 
@@ -127,6 +137,7 @@ img.character {
   font-style: italic;
   text-align: center;
   /* pointer-events: auto; */
+  user-select: none;
 }
 
 .en:hover {
@@ -139,6 +150,7 @@ img.character {
   text-shadow: #cb04ff 0 0 5px, #fff 0 0 15px;
   font-style: italic;
   text-align: center;
+  user-select: none;
 }
 
 .kr:hover {
