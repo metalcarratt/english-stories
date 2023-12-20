@@ -1,7 +1,7 @@
 <template>
     <div :class="['container', props.mode]">
-        <img class="background" :src="background()" />
-        <img class="character" :src="character()" />
+        <img :class="['background', backgroundAnimationClass]" :src="background()" />
+        <img :class="['character', characterAnimationClass]" :src="character()" />
         <div class="dialog">
             <span class="en"  @click="playEn">{{ dialogEn() }}</span>
             <span class="kr" @click="playKr">{{ dialogKr() }}</span>
@@ -18,14 +18,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from 'vue';
-import { story } from './story';
+import { ref, defineProps, Ref } from 'vue';
+import { Effect, story, StoryFrame } from './story';
 
 const props = defineProps(['mode']);
+const characterAnimationClass = ref('');
+const backgroundAnimationClass = ref('');
 
 let index = 0;
 
-const frame = ref({bg: '', ch: '', d: { en: '', kr: '', enAudio: new Audio(), krAudio: new Audio()}});
+const frame: Ref<StoryFrame> = ref({bg: '', ch: '', d: { en: '', kr: '', enAudio: new Audio(), krAudio: new Audio()}});
 
 const background = () => frame.value.bg;
 const character = () => frame.value.ch;
@@ -58,16 +60,36 @@ const update = () => {
     frame.value.bg = (story[index].bg ?? lastFrame('bg') ?? frame.value.bg) as string;
     frame.value.ch = (story[index].ch ?? lastFrame('ch') ?? frame.value.ch) as string;
     frame.value.d = (story[index].d ?? lastFrame('d') ?? frame.value.d);
-    console.log(`d: ${JSON.stringify(story)}`);
+    frame.value.effect = story[index].effect;
+    frame.value.bgEffect = story[index].bgEffect;
     playEn();
+    
 }
 
 const playEn = () => {
+    effect();
     frame.value.d.enAudio?.play();
 }
 
 const playKr = () => {
+    effect();
     frame.value.d.krAudio?.play();
+}
+
+const effect = () => {
+    if (frame.value.effect === Effect.Flash) {
+        characterAnimationClass.value = 'flash';
+    } else if (frame.value.effect === Effect.Shake) {
+        characterAnimationClass.value = 'shake';
+    }
+    setTimeout(() => characterAnimationClass.value = '', 200);
+
+    if (frame.value.bgEffect === Effect.Flash) {
+        backgroundAnimationClass.value = 'flash';
+    } else if (frame.value.bgEffect === Effect.Shake) {
+        backgroundAnimationClass.value = 'shake';
+    }
+    setTimeout(() => backgroundAnimationClass.value = '', 200);
 }
 
 update();
@@ -111,6 +133,31 @@ img.character {
   bottom: 0;
   filter: drop-shadow(0 0 10px #5c188a);
 }
+
+.flash {
+  transition: 0.2s;
+  filter: saturate(300%);;
+}
+
+.shake {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
 
 .dialog {
   position: absolute;

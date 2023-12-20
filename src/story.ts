@@ -10,16 +10,25 @@ const WOMAN = './surprised-woman.png';
 const BOLT = './bolt.png';
 const SWORD = './sword.png';
 
+export enum Effect {
+    Flash = 'flash',
+    Shake = 'shake'
+}
+
 export type StoryFrame = {
     bg?: string,
     ch?: string,
     d: {
         en: string,
-        kr: string
-    }
+        kr: string,
+        enAudio?: HTMLAudioElement,
+        krAudio?: HTMLAudioElement
+    },
+    effect?: Effect,
+    bgEffect?: Effect
 }
 
-export const story = [
+export const story: StoryFrame[] = [
     {
         bg: SEA,
         ch: MONSTER,
@@ -28,7 +37,8 @@ export const story = [
             kr: '노호!',
             enAudio: new Audio( require('@/assets/001.mp3') ),
             krAudio: new Audio( require('@/assets/001k.mp3') )
-        }
+        },
+        effect: Effect.Shake
     },
     {
         d: {
@@ -86,7 +96,8 @@ export const story = [
             kr: '하하하하!',
             enAudio: new Audio( require('@/assets/008.mp3') ),
             krAudio: new Audio( require('@/assets/008k.mp3') )
-        }
+        },
+        effect: Effect.Shake
     },
     {
         bg: DOWNTOWN,
@@ -96,7 +107,8 @@ export const story = [
             kr: '무엇? 저게 뭐에요?',
             enAudio: new Audio( require('@/assets/009.mp3') ),
             krAudio: new Audio( require('@/assets/009k.mp3') )
-        }
+        },
+        effect: Effect.Shake
     },
     {
         ch: WOMAN,
@@ -105,7 +117,8 @@ export const story = [
             kr: '괴물이다!',
             enAudio: new Audio( require('@/assets/010.mp3') ),
             krAudio: new Audio( require('@/assets/010k.mp3') )
-        }
+        },
+        effect: Effect.Shake
     },
     {
         ch: WOMAN,
@@ -132,7 +145,8 @@ export const story = [
             kr: 'ㅋ!',
             enAudio: new Audio( require('@/assets/013.mp3') ),
             krAudio: new Audio( require('@/assets/013k.mp3') )
-        }
+        },
+        effect: Effect.Shake
     },
     {
         ch: MONSTER_CLOSEUP,
@@ -193,7 +207,8 @@ export const story = [
             kr: '하하하하!',
             enAudio: new Audio( require('@/assets/020.mp3') ),
             krAudio: new Audio( require('@/assets/020k.mp3') )
-        }
+        },
+        effect: Effect.Shake
     },
     {
         d: {
@@ -252,7 +267,8 @@ export const story = [
             kr: '크랙~!',
             enAudio: new Audio( require('@/assets/027.mp3') ),
             krAudio: new Audio( require('@/assets/027k.mp3') )
-        }
+        },
+        bgEffect: Effect.Flash
     },
     {
         ch: MONSTER_CLOSEUP,
@@ -279,7 +295,9 @@ export const story = [
             kr: '팔!',
             enAudio: new Audio( require('@/assets/030.mp3') ),
             krAudio: new Audio( require('@/assets/030k.mp3') )
-        }
+        },
+        effect: Effect.Shake,
+        bgEffect: Effect.Flash
     },
     {
         d: {
@@ -287,7 +305,9 @@ export const story = [
             kr: '충돌!',
             enAudio: new Audio( require('@/assets/031.mp3') ),
             krAudio: new Audio( require('@/assets/031k.mp3') )
-        }
+        },
+        effect: Effect.Shake,
+        bgEffect: Effect.Flash
     },
     {
         ch: MONSTER_CLOSEUP,
@@ -296,7 +316,8 @@ export const story = [
             kr: '아아아~~!',
             enAudio: new Audio( require('@/assets/032.mp3') ),
             krAudio: new Audio( require('@/assets/032k.mp3') )
-        }
+        },
+        effect: Effect.Flash
     },
     {
         d: {
@@ -304,6 +325,7 @@ export const story = [
             kr: '멈추다! 아파요!',
             enAudio: new Audio( require('@/assets/033.mp3') ),
             krAudio: new Audio( require('@/assets/033k.mp3') )
-        }
+        },
+        effect: Effect.Shake
     },
 ]
