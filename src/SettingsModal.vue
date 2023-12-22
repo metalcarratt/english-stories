@@ -1,17 +1,17 @@
 <template>
     <div class="matte" >
         <div class="modal">
-            <h2>Settings</h2>
+            <h2>설정</h2>
             <fieldset>
-                <label>Audio Speed</label>
+                <label>오디오 속도</label>
                 <span class="controls">
-                    <span :class="audioPlaybackSpeed === 0.25 ? 'selected' : ''" @click="audioPlaybackSpeed = 0.25">Slowest</span>
-                    <span :class="audioPlaybackSpeed === 0.5 ? 'selected' : ''" @click="audioPlaybackSpeed = 0.5">Slower</span>
-                    <span :class="audioPlaybackSpeed === 0.75 ? 'selected' : ''" @click="audioPlaybackSpeed = 0.75">Slow</span>
-                    <span :class="audioPlaybackSpeed === 1.0 ? 'selected' : ''" @click="audioPlaybackSpeed = 1.0">Normal</span>
+                    <span :class="audioPlaybackSpeed === 0.25 ? 'selected' : ''" @click="audioPlaybackSpeed = 0.25">가장 느리게</span>
+                    <span :class="audioPlaybackSpeed === 0.5 ? 'selected' : ''" @click="audioPlaybackSpeed = 0.5">더 느리게</span>
+                    <span :class="audioPlaybackSpeed === 0.75 ? 'selected' : ''" @click="audioPlaybackSpeed = 0.75">느리게</span>
+                    <span :class="audioPlaybackSpeed === 1.0 ? 'selected' : ''" @click="audioPlaybackSpeed = 1.0">정상</span>
                 </span>
             </fieldset>
-            <button @click="() => modalOpen = false">Close</button>
+            <button @click="() => modalOpen = false">닫다</button>
         </div>
     </div>
 </template>
@@ -43,7 +43,7 @@ import { audioPlaybackSpeed, modalOpen } from './state';
 .modal h2 {
     text-align: center;
     font-family: sans-serif;
-    /* padding-top: 20px; */
+    font-weight: 400;
     color: #c58c20;
 }
 
