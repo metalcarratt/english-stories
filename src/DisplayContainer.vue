@@ -2,6 +2,9 @@
     <div :class="['container', props.mode]">
         <img :class="['background', backgroundAnimationClass]" :src="background()" />
         <img :class="['character', characterAnimationClass]" :src="character()" />
+        <div class="top">
+            <img src="settings.png" @click="modalOpen = true"/>
+        </div>
         <div class="dialog">
             <span class="en"  @click="playEn">{{ dialogEn() }}</span>
             <span class="kr" @click="playKr">{{ dialogKr() }}</span>
@@ -14,16 +17,20 @@
                 </span>
             </span>
         </div>
+        <SettingsModal v-if="modalOpen" />
     </div>
 </template>
 
 <script setup lang="ts">
 import { ref, defineProps, Ref } from 'vue';
+import SettingsModal from './SettingsModal.vue';
 import { Effect, story, StoryFrame } from './story';
+import { audioPlaybackSpeed, modalOpen } from './state';
 
 const props = defineProps(['mode']);
 const characterAnimationClass = ref('');
 const backgroundAnimationClass = ref('');
+
 
 let index = 0;
 
@@ -68,12 +75,19 @@ const update = () => {
 
 const playEn = () => {
     effect();
-    frame.value.d.enAudio?.play();
+    playAudio(frame.value.d.enAudio);
 }
 
 const playKr = () => {
     effect();
-    frame.value.d.krAudio?.play();
+    playAudio(frame.value.d.krAudio);
+}
+
+const playAudio = (audio?: HTMLAudioElement) => {
+    if (audio) {
+        audio.playbackRate=audioPlaybackSpeed.value;
+        audio?.play();
+    }
 }
 
 const effect = () => {
@@ -157,6 +171,24 @@ img.character {
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+.top {
+  position: absolute;
+  width: calc(100% - 30px);
+  top: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.top img {
+    width: 50px;
+}
+
+.top img:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px #1e2129);
+}
+
 
 
 .dialog {
