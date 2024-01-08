@@ -1,0 +1,29 @@
+.top {
+    position: absolute;
+    width: calc(100% - 30px);
+    top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    img {
+        width: 50px;
+
+        &:hover {
+            cursor: pointer;
+            filter: drop-shadow(0 0 5px #1e2129);
+        }
+    }
+
+    .icon {
+        font-size: 40px;
+        font-weight: 700;
+        font-family: sans-serif;
+        color: #c9c909;
+
+        &:hover {
+            cursor: pointer;
+            filter: drop-shadow(0 0 5px #1e2129);
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.matte {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000aa;
+
+    .modal {
+        width: calc(100% - 80px);
+        height: calc(100% - 80px);
+        margin: 40px;
+        box-sizing: border-box;
+        background-color: white;
+        padding: 20px;
+        font-family: sans-serif;
+
+        h2 {
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 400;
+            color: #c58c20;
+        }
+
+        button {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+
+            label {
+                display: block;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .controls {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 10px 0;
+
+                span {
+                    padding: 10px;
+                    border-radius: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 13px;
+
+                    img {
+                        width: 65px;
+                    }
+
+                    &:hover {
+                        background-color: #ccc;
+                        cursor: pointer;
+                    }
+
+                    &.selected {
+                        background-color: #fafa89;
+                    }
+                }
+            }
+        }
+    }
+}
