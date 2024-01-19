@@ -1,4 +1,5 @@
 @import './top.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .container {
     display: flex;
@@ -72,47 +73,91 @@
     /* height: 40%; */
     padding: 8px;
     bottom: 0;
-    font-family: "Comic Sans MS";
-    font-size: 30px;
+    gap: 80px;
+    
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    span {
-        padding: 15px;
-    }
+    // span {
+    //     padding: 15px;
+    // }
 
     &.big {
         font-size: 50px;
     }
 }
 
-.en {
-    /* margin-bottom: 20px; */
-    color: white;
-    text-shadow: #C900FF 0 0 5px, #FEF8FF 0 0 15px;
-    font-style: italic;
-    text-align: center;
-    /* pointer-events: auto; */
-    user-select: none;
+.text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    margin-bottom: 80px;
 
-    &:hover {
-        text-shadow:  #EA9DFF 0 0 5px, #EA9DFF 0 0 15px, #EA9DFF 0 0 25px;
-        cursor: pointer;
+    // border: 4px solid #9d8833;
+    border-radius: 30px;
+    background-color: white;
+    width: calc(100% - 80px);
+    padding: 15px;
+
+    // font-family: "Comic Sans MS";
+    
+
+    // &:hover {
+    //     text-shadow:  #EA9DFF 0 0 5px, #EA9DFF 0 0 15px, #EA9DFF 0 0 25px;
+    //     cursor: pointer;
+    // }
+
+    .en {
+        color: #091d3b;
+        font-family: 'Poppins', sans-serif;
+        font-size: 38px;
+        // text-shadow: #C900FF 0 0 5px, #FEF8FF 0 0 15px;
+        font-style: italic;
+        text-align: center;
+        user-select: none;
+
+        display: flex;
+        flex-direction: column;
+        
     }
-}
 
-.kr {
-    color: #230239;
-    text-shadow: #cb04ff 0 0 5px, #fff 0 0 15px;
-    font-style: italic;
-    text-align: center;
-    user-select: none;
+    .controls {
+        
 
-    &:hover {
-        text-shadow:  #EA9DFF 0 0 5px, #EA9DFF 0 0 15px, #EA9DFF 0 0 25px;
-        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        padding-right: 20px;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 50px;
+
+        .kr, svg {
+            font-size: 18px;
+            color: #c9c909;
+    
+            &:hover {
+                cursor: pointer;
+                text-shadow: #1e2129 0 0 1px;
+            }
+        }
+    }
+
+    
+
+    svg.arrow {
+        font-size: 40px;
+        color: #c9c909;
+        margin: 10px;
+
+        &:hover {
+            cursor: pointer;
+            filter: drop-shadow(0 0 5px #1e2129);
+        }
     }
 }
 
@@ -125,14 +170,4 @@
     color: #d1d141;
     font-size: 40px;
     padding: 5px;
-
-    span img {
-        padding: 0;
-        text-shadow:  black 0 0 1px;
-
-        &:hover {
-            cursor: pointer;
-            filter: drop-shadow(0 0 5px #1e2129);
-        }
-    }
 }

@@ -21,6 +21,7 @@ const mode = (height > width * 1.33) ? 'max-width' : 'max-height';
 @import './pages/start/start.scss';
 @import './pages/story/story.scss';
 @import './pages/library/library.scss';
+@import './pages/components/icon.scss';
 
 html, body, #app {
     height: 100%;

@@ -18,8 +18,8 @@ frames: [
     {
         bg: './books/phonics/ant.jpg',
         d: {
-            en: 'ant artist',
-            kr: '개미 예술가',
+            en: 'ant',
+            kr: '개미',
             enAudio: new Audio( require('@/assets/books/phonics/002e.mp3') ),
             krAudio: new Audio( require('@/assets/books/phonics/002k.mp3') )
         }
@@ -27,17 +27,17 @@ frames: [
     {
         bg: './books/phonics/ape.jpg',
         d: {
-            en: 'army ape',
-            kr: '육군 원숭이',
+            en: 'ape',
+            kr: '원숭이',
             enAudio: new Audio( require('@/assets/books/phonics/003e.mp3') ),
             krAudio: new Audio( require('@/assets/books/phonics/003k.mp3') )
         }
     },
     {
-        bg: './books/phonics/archer.jpg',
+        bg: './books/phonics/avocado.jpg',
         d: {
-            en: 'aiming archer',
-            kr: '조준 궁수',
+            en: 'avocado',
+            kr: '_',
             enAudio: new Audio( require('@/assets/books/phonics/004e.mp3') ),
             krAudio: new Audio( require('@/assets/books/phonics/004k.mp3') )
         }
@@ -45,8 +45,8 @@ frames: [
     {
         bg: './books/phonics/axe.jpg',
         d: {
-            en: 'angry axe',
-            kr: '화난 도끼',
+            en: 'axe',
+            kr: '도끼',
             enAudio: new Audio( require('@/assets/books/phonics/005e.mp3') ),
             krAudio: new Audio( require('@/assets/books/phonics/005k.mp3') )
         }
@@ -63,8 +63,8 @@ frames: [
     {
         bg: './books/phonics/bear.jpg',
         d: {
-            en: 'big bear',
-            kr: '큰 곰',
+            en: 'bear',
+            kr: '곰',
             enAudio: new Audio( require('@/assets/books/phonics/007e.mp3') ),
             krAudio: new Audio( require('@/assets/books/phonics/007k.mp3') )
         }
@@ -72,8 +72,8 @@ frames: [
     {
         bg: './books/phonics/bus.jpg',
         d: {
-            en: 'busy bus',
-            kr: '바쁜 버스',
+            en: 'bus',
+            kr: '버스',
             enAudio: new Audio( require('@/assets/books/phonics/008e.mp3') ),
             krAudio: new Audio( require('@/assets/books/phonics/008k.mp3') )
         }
@@ -81,8 +81,8 @@ frames: [
     {
         bg: './books/phonics/bat.jpg',
         d: {
-            en: 'bouncing bat',
-            kr: '통통 튀는 박쥐',
+            en: 'bat',
+            kr: '박쥐',
             enAudio: new Audio( require('@/assets/books/phonics/009e.mp3') ),
             krAudio: new Audio( require('@/assets/books/phonics/009k.mp3') )
         }
@@ -90,8 +90,98 @@ frames: [
     {
         bg: './books/phonics/bricks.jpg',
         d: {
-            en: 'blue and brown bricks',
-            kr: '파란색과 갈색 벽돌',
+            en: 'bricks',
+            kr: '벽돌',
+            enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
+            krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
+        }
+    },
+    {
+        bg: './books/phonics/Cc.jpg',
+        d: {
+            en: 'C',
+            kr: 'c',
+            enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
+            krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
+        }
+    },
+    {
+        bg: './books/phonics/cat.jpg',
+        d: {
+            en: 'Cat',
+            kr: '고양이',
+            enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
+            krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
+        }
+    },
+    {
+        bg: './books/phonics/car.jpg',
+        d: {
+            en: 'Car',
+            kr: '자동차',
+            enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
+            krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
+        }
+    },
+    {
+        bg: './books/phonics/camel.jpg',
+        d: {
+            en: 'Camel',
+            kr: '낙타',
+            enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
+            krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
+        }
+    },
+    {
+        bg: './books/phonics/cactus.jpg',
+        d: {
+            en: 'Cactus ',
+            kr: '선인장',
+            enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
+            krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
+        }
+    },
+    {
+        bg: './books/phonics/Dd.jpg',
+        d: {
+            en: 'D',
+            kr: 'd',
+            enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
+            krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
+        }
+    },
+    {
+        bg: './books/phonics/diamond.jpg',
+        d: {
+            en: 'Diamond',
+            kr: '다이아몬드',
+            enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
+            krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
+        }
+    },
+    {
+        bg: './books/phonics/dog.jpg',
+        d: {
+            en: 'Dog',
+            kr: '개',
+            enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
+            krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
+        }
+    },
+    {
+        bg: './books/phonics/drinks.jpg',
+        d: {
+            en: 'Drinks',
+            kr: '음료수',
+            enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
+            krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
+        }
+    },
+    {
+        bg: './books/phonics/duck.jpg',
+        d: {
+            en: 'Duck',
+            kr: '오리',
             enAudio: new Audio( require('@/assets/books/phonics/010e.mp3') ),
             krAudio: new Audio( require('@/assets/books/phonics/010k.mp3') )
         }

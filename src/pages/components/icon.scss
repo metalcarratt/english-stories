@@ -1,0 +1,16 @@
+.icon-btn {
+    font-size: 40px;
+    color: #e3e32a;
+
+    padding: 0;
+    text-shadow:  black 0 0 1px;
+
+    background-color: #aaa7;
+    padding: 12px;
+    // box-shadow: #666 2px 2px 5px;
+
+    svg:hover {
+        cursor: pointer;
+        filter: drop-shadow(0 0 5px #1e2129);
+    }
+}

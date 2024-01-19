@@ -1,15 +1,16 @@
 <template>
     <span class="arrows">
         <span @click="prev">
-            <img src="left.png" v-if="hasPrev()"/>
+            <IconBtn icon="fa-arrow-left" v-if="hasPrev()" />
         </span>
         <span @click="next">
-            <img src="right.png" v-if="hasNext()" />
+            <IconBtn icon="fa-arrow-right" v-if="hasNext()" />
         </span>
     </span>
 </template>
 
 <script setup>
+import IconBtn from '../components/IconBtn.vue';
 import {
     hasNext, 
     next, 
