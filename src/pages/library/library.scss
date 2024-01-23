@@ -8,9 +8,14 @@
     align-items: center;
     padding: 5px;
     background-color: white;
+    background-image: url('~@/assets/library-bg.jpg');
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #5a6632;
 
     h1 {
-        color: #1a1a97;
+        color: #fffdfd;
         font-family: sans-serif;
     }
 
@@ -18,14 +23,32 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 5px;
+        margin: 15px;
+
+        background-color: #6697;
+        color: white;
+        padding: 3px;
+        border-radius: 15px;
+        font-family: sans-serif;
+        font-size: 18px;
+        box-shadow: 0px 0px 10px #000;
 
         img {
-            width: 125px;
+            width: 150px;
+            border-radius: 15px;
+            border: 1px solid #3a5187;
+        }
+
+        label {
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         &:hover {
             cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0px 0px 20px #fff;
         }
     }
 

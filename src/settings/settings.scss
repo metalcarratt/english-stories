@@ -4,20 +4,29 @@
     height: 100%;
     background-color: #000000aa;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     .modal {
-        width: calc(100% - 80px);
-        height: calc(100% - 80px);
+        // width: calc(100% - 80px);
+        // height: calc(100% - 80px);
         margin: 40px;
-        box-sizing: border-box;
+        // box-sizing: border-box;
         background-color: white;
         padding: 20px;
         font-family: sans-serif;
+
+        border-radius: 50px;
+        padding: 30px;
 
         h2 {
             text-align: center;
             font-family: sans-serif;
             font-weight: 400;
-            color: #c58c20;
+            // color: #c58c20;
+            margin-top: 0;
         }
 
         button {
@@ -35,7 +44,8 @@
             label {
                 display: block;
                 font-weight: 700;
-                margin-bottom: 10px;
+                color: #e53a3a;
+                border-bottom: 1px solid #e53a3a;
             }
 
             .controls {
@@ -43,6 +53,7 @@
                 flex-direction: row;
                 justify-content: space-between;
                 padding: 10px 0;
+                gap: 20px;
 
                 span {
                     padding: 10px;
@@ -51,9 +62,11 @@
                     flex-direction: column;
                     align-items: center;
                     font-size: 13px;
+                    gap: 5px;
 
-                    img {
-                        width: 65px;
+                    svg {
+                        font-size: 60px;
+                        color: navy;
                     }
 
                     &:hover {
